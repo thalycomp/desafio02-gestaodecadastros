@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Container, Box, Navigation, Form } from './styles';
-import { Link } from 'react-router-dom';
+import { Container, Box, Form } from './styles';
+import NavFooter from '../../components/Footer';
 
 const Clientes = () => {
   const [{ name, adress, city }, setClient] = useState({
@@ -42,10 +42,12 @@ const Clientes = () => {
           />
           <button type="submit">CADASTRAR</button>
         </Form>
-        <Navigation>
-          <Link to="/clientes">DASHBOARD</Link>
-          <Link to="/produtos">CADASTRAR PRODUTOS</Link>
-        </Navigation>
+        <NavFooter
+          name1="Dashboard"
+          link1=""
+          name2="Produtos"
+          link2="produtos"
+        />
       </Box>
     </Container>
   );

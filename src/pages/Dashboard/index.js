@@ -1,12 +1,12 @@
 import React from 'react';
-import { Container, Box, Cards, Navigation } from './styles';
-import { Link } from 'react-router-dom';
+import { Container, Box, Cards } from './styles';
+import NavFooter from '../../components/Footer';
 
 const Dashboard = () => {
   return (
     <Container>
       <Box>
-        <h1>Dashboard</h1>
+        <h2>Dashboard</h2>
         <Cards>
           <div>
             <span>0</span>
@@ -17,10 +17,12 @@ const Dashboard = () => {
             <p>PRODUTOS</p>
           </div>
         </Cards>
-        <Navigation>
-          <Link to="/clientes">CADASTRAR CLIENTES</Link>
-          <Link to="/produtos">CADASTRAR PRODUTOS</Link>
-        </Navigation>
+        <NavFooter
+          name1="Clientes"
+          link1="clientes"
+          name2="Produtos"
+          link2="produtos"
+        />
       </Box>
     </Container>
   );

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Container, Box, Navigation, Form } from './styles';
-import { Link } from 'react-router-dom';
+import { Container, Box, Form } from './styles';
+import NavFooter from '../../components/Footer';
 
 const Products = () => {
   const [{ cod, name, price }, setProduct] = useState({
@@ -44,10 +44,12 @@ const Products = () => {
           />
           <button type="submit">CADASTRAR</button>
         </Form>
-        <Navigation>
-          <Link to="/">DASHBOARD</Link>
-          <Link to="/clientes">CADASTRAR CLIENTES</Link>
-        </Navigation>
+        <NavFooter
+          name1="Dashboard"
+          link1=""
+          name2="Clientes"
+          link2="Clientes"
+        />
       </Box>
     </Container>
   );
