@@ -7,6 +7,8 @@ export const Navigation = styled.div`
   border-top: 1px solid #ddd;
   padding: 20px;
 
+  text-transform: uppercase;
+
   a {
     padding: 14px;
     border-radius: 4px;
@@ -16,5 +18,9 @@ export const Navigation = styled.div`
     margin: 2px;
     cursor: pointer;
     flex: 1;
+  }
+
+  a:hover {
+    background-color: #6ea1f4;
   }
 `;
