@@ -1,37 +1,67 @@
 import React, { useState } from 'react';
-import { Container, Box, Form } from './styles';
+import { Container, Box } from './styles';
 import NavFooter from '../../components/Footer';
 
 const Products = () => {
-  const [{ cod, name, price }, setProduct] = useState({
-    cod: '',
-    name: '',
-    price: '',
-  });
-  const handleSubmit = () => {};
+  const [cod, setCod] = useState('');
+  const [name, setName] = useState('');
+  const [price, setPrice] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (name.length === 0 || price.length === 0 || cod.length === 0) {
+      alert('Preencha o formulário corretamente!');
+      return;
+    }
+
+    let product = {
+      cod: cod,
+      name: name,
+      price: price,
+    };
+
+    let products = [];
+
+    let productsAlreadyExists = JSON.parse(localStorage.getItem('produtos:'));
+
+    if (productsAlreadyExists) {
+      products.push(...productsAlreadyExists);
+    }
+
+    products.push(product);
+
+    localStorage.setItem('produtos:', JSON.stringify(products));
+
+    alert('Produto com sucesso!');
+
+    clearFields();
+  };
+
+  const clearFields = () => {
+    setName('');
+    setCod('');
+    setPrice('');
+  };
+
   return (
     <Container>
       <Box>
-        <h1>Products</h1>
-        <Form
-          onSubmit={(e) => {
-            e.preventDefault();
-            handleSubmit();
-          }}
-        >
+        <h2>PRODUTOS</h2>
+        <form onSubmit={(e) => handleSubmit(e)}>
           <input
             type="text"
             placeholder="Digite o código do produto"
             name={cod}
             value={cod}
-            onChange={(e) => setProduct({ cod: e.target.value })}
+            onChange={(e) => setCod(e.target.value)}
           />
           <input
             type="text"
             placeholder="Digite o nome do produto"
             name={name}
             value={name}
-            onChange={(e) => setProduct({ name: e.target.value })}
+            onChange={(e) => setName(e.target.value)}
           />
           <input
             type="number"
@@ -40,10 +70,10 @@ const Products = () => {
             placeholder="Digite o preço do produto"
             name={price}
             value={price}
-            onChange={(e) => setProduct({ price: e.target.value })}
+            onChange={(e) => setPrice(e.target.value)}
           />
           <button type="submit">CADASTRAR</button>
-        </Form>
+        </form>
         <NavFooter
           name1="Dashboard"
           link1=""
