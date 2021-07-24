@@ -49,4 +49,12 @@ export const Cards = styled.div`
     justify-content: center;
     flex: 1;
   }
+
+  @media (max-width: 660px) {
+    flex-direction: column;
+
+    div {
+      width: 100%;
+    }
+  }
 `;
