@@ -29,13 +29,12 @@ export const Cards = styled.div`
   padding: 20px;
 
   div {
-    background-color: #6ea1f4;
-    border: 2px solid #2166d6;
+    border: 1px solid #ddd;
     margin: 5px;
     padding: 50px;
     border-radius: 4px;
 
-    color: #fff;
+    color: #2166d6;
     font-weight: bold;
     font-size: 20px;
 
