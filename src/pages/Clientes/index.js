@@ -1,47 +1,77 @@
 import React, { useState } from 'react';
-import { Container, Box, Form } from './styles';
+import { Container, Box } from './styles';
 import NavFooter from '../../components/Footer';
 
 const Clientes = () => {
-  const [{ name, adress, city }, setClient] = useState({
-    name: '',
-    adress: '',
-    city: '',
-  });
-  const handleSubmit = () => {};
+  const [name, setName] = useState('');
+  const [adress, setAdress] = useState('');
+  const [city, setCity] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (name.length === 0 || adress === 0 || city === 0) {
+      alert('Preencha o formulário corretamente!');
+      return;
+    }
+
+    let client = {
+      name: name,
+      adress: adress,
+      city: city,
+    };
+
+    let clients = [];
+
+    let clientsAlreadyExists = JSON.parse(localStorage.getItem('clientes:'));
+
+    if (clientsAlreadyExists) {
+      clients.push(...clientsAlreadyExists);
+    }
+
+    clients.push(client);
+
+    localStorage.setItem('clientes:', JSON.stringify(clients));
+
+    alert('Cadastrado com sucesso!');
+
+    clearFields();
+  };
+
+  const clearFields = () => {
+    setName('');
+    setCity('');
+    setAdress('');
+  };
+
   return (
     <Container>
       <Box>
         <h1>Clientes</h1>
-        <Form
-          onSubmit={(e) => {
-            e.preventDefault();
-            handleSubmit();
-          }}
-        >
+        <form onSubmit={(e) => handleSubmit(e)}>
           <input
             type="text"
             placeholder="Digite o nome do cliente"
             name={name}
             value={name}
-            onChange={(e) => setClient({ name: e.target.value })}
+            onChange={(e) => setName(e.target.value)}
           />
           <input
             type="text"
             placeholder="Digite o endereço do cliente"
             name={adress}
             value={adress}
-            onChange={(e) => setClient({ adress: e.target.value })}
+            onChange={(e) => setAdress(e.target.value)}
           />
           <input
             type="text"
             placeholder="Digite a cidade do cliente"
             name={city}
             value={city}
-            onChange={(e) => setClient({ city: e.target.value })}
+            onChange={(e) => setCity(e.target.value)}
           />
           <button type="submit">CADASTRAR</button>
-        </Form>
+        </form>
         <NavFooter
           name1="Dashboard"
           link1=""
