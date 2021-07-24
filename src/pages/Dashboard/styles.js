@@ -15,6 +15,11 @@ export const Box = styled.main`
   padding: 10px;
   border: 1px solid #e1e4e8;
   text-align: center;
+
+  h2 {
+    padding-top: 20px;
+    color: #2166d6;
+  }
 `;
 
 export const Cards = styled.div`
@@ -25,6 +30,7 @@ export const Cards = styled.div`
 
   div {
     background-color: #6ea1f4;
+    border: 2px solid #2166d6;
     margin: 5px;
     padding: 50px;
     border-radius: 4px;

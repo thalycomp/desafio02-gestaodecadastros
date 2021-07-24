@@ -1,19 +1,35 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Box, Cards } from './styles';
 import NavFooter from '../../components/Footer';
 
 const Dashboard = () => {
+  const [products, setProducts] = useState(0);
+  const [clients, setClients] = useState(0);
+
+  useEffect(() => {
+    let clientsAlreadyExists = JSON.parse(localStorage.getItem('clientes:'));
+    let productsAlreadyExists = JSON.parse(localStorage.getItem('produtos:'));
+
+    if (clientsAlreadyExists) {
+      setClients(clientsAlreadyExists.length);
+    }
+
+    if (productsAlreadyExists) {
+      setProducts(productsAlreadyExists.length);
+    }
+  }, []);
+
   return (
     <Container>
       <Box>
-        <h2>Dashboard</h2>
+        <h2>Hiring Coders - Desafio 02</h2>
         <Cards>
           <div>
-            <span>0</span>
+            <span>{clients}</span>
             <p>CLIENTES</p>
           </div>
           <div>
-            <span>3</span>
+            <span>{products}</span>
             <p>PRODUTOS</p>
           </div>
         </Cards>
