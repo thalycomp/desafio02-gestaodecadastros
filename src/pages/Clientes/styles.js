@@ -17,30 +17,30 @@ export const Box = styled.main`
   text-align: center;
 `;
 
-export const Cards = styled.div`
+export const Form = styled.form`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 20px;
 
-  div {
-    background-color: #999;
-    margin: 5px;
-    padding: 50px;
+  input {
+    width: 100%;
+    padding: 15px;
+    background: #eee;
+    font-size: 14px;
+    border: 0;
+    margin-bottom: 10px;
+  }
+
+  button {
+    padding: 14px;
     border-radius: 4px;
-
+    border: none;
+    background: #2166d6;
     color: #fff;
-    font-weight: bold;
-    font-size: 20px;
-
-    p {
-      margin-top: 10px;
-    }
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    margin: 2px;
+    cursor: pointer;
     flex: 1;
   }
 `;

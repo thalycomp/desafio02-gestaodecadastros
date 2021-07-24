@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Box, Cards, Navigation } from './styles';
+import { Link } from 'react-router-dom';
 
 const Dashboard = () => {
   return (
@@ -17,8 +18,8 @@ const Dashboard = () => {
           </div>
         </Cards>
         <Navigation>
-          <button>CADASTRAR CLIENTES</button>
-          <button>CADASTRAR PRODUTOS</button>
+          <Link to="/clientes">CADASTRAR CLIENTES</Link>
+          <Link to="/produtos">CADASTRAR PRODUTOS</Link>
         </Navigation>
       </Box>
     </Container>

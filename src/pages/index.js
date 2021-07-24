@@ -1,5 +1,5 @@
 import Dashboard from './Dashboard';
 import Products from './Products';
-import Users from './Users';
+import Clientes from './Clientes';
 
-export { Dashboard, Products, Users };
+export { Dashboard, Products, Clientes };
