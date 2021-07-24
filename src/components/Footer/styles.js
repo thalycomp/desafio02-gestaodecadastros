@@ -1,5 +1,12 @@
 import styled from 'styled-components';
 
+export const Container = styled.div`
+  p {
+    color: #999;
+    font-size: 12px;
+  }
+`;
+
 export const Navigation = styled.div`
   display: flex;
   align-items: center;

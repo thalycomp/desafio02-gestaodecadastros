@@ -22,7 +22,7 @@ const Dashboard = () => {
   return (
     <Container>
       <Box>
-        <h2>Hiring Coders - Desafio 02</h2>
+        <h2>HIRING CODERS - DESAFIO 02</h2>
         <Cards>
           <div>
             <span>{clients}</span>
