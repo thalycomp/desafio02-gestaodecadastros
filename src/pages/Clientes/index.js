@@ -10,7 +10,7 @@ const Clientes = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (name.length === 0 || adress === 0 || city === 0) {
+    if (name.length === 0 || adress.length === 0 || city.length === 0) {
       alert('Preencha o formulário corretamente!');
       return;
     }
@@ -47,7 +47,7 @@ const Clientes = () => {
   return (
     <Container>
       <Box>
-        <h1>Clientes</h1>
+        <h2>CLIENTES</h2>
         <form onSubmit={(e) => handleSubmit(e)}>
           <input
             type="text"

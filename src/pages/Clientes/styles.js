@@ -16,6 +16,11 @@ export const Box = styled.main`
   border: 1px solid #e1e4e8;
   text-align: center;
 
+  h2 {
+    padding-top: 20px;
+    color: #2166d6;
+  }
+
   form {
     display: flex;
     flex-direction: column;
